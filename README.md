@@ -5,29 +5,29 @@ This configuration is designed to be stable, fast, and easy to expand. It is bui
 Your config is split into two main areas: lua/core for your personal settings and lua/plugins for all your plugins. This separation makes it easy to find and change things.
 
 ~/.config/nvim/
-├── init.lua          <-- The ONLY file Neovim loads at start.
-│
+├── init.lua          <-- Main entry point, sets up lazy.nvim
 ├── lua/
 │   ├── core/
-│   │   ├── options.lua   <-- Your global editor settings (tabs, numbers, etc.)
-│   │   └── keymaps.lua   <-- (This file is now part of your plugins)
-│
-│   └── plugins/        <-- ALL your plugins live here. One file per feature.
+│   │   └── options.lua   <-- Global editor settings (tabs, numbers, etc.)
+│   │
+│   └── plugins/        <-- All your plugins live here
 │       ├── 1-theme.lua
 │       ├── autopairs.lua
-│       ├── bufferline.lua  <-- (If you added this)
-│       ├── comment.lua     <-- (If you added this)
+│       ├── comment.lua
+│       ├── dap.lua         <-- Debugger (DAP)
+│       ├── database.lua
 │       ├── formatter.lua
-│       ├── gitsigns.lua    <-- (If you added this)
+│       ├── gitsigns.lua
 │       ├── indent-blankline.lua
-│       ├── lsp.lua         <-- CRITICAL: Installs & configs all LSPs
-│       ├── lsp-cmp.lua     <-- CRITICAL: Configures auto-completion
+│       ├── lsp.lua         <-- Main LSP + Mason config
+│       ├── lsp-cmp.lua     <-- Auto-completion UI
 │       ├── lualine.lua
 │       ├── nvim-tree.lua
 │       ├── telescope.lua
 │       ├── treesitter.lua
-│       └── which-key.lua<-- (If you added this)│
-└── lazy-lock.json      <-- Auto-generated. Do not edit. Locks plugin versions.
+│       └── which-key.lua
+│
+└── lazy-lock.json      <-- Auto-generated, locks plugin versions
 
 2. 🚀 The Flow of Work (How it Boots)
 
