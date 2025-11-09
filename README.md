@@ -1,5 +1,65 @@
 This configuration is designed to be stable, fast, and easy to expand. It is built around lazy.nvim, a modern plugin manager that handles loading plugins in the correct order to prevent errors.
 
+Prerequisites
+
+Before you install this, you will need a few things on your system:
+
+    Neovim: Version 0.10.0 or higher.
+
+    Git: lazy.nvim uses this to manage plugins.
+
+    A Nerd Font: This is required for icons in plugins like nvim-tree.lua and lualine.nvim. I recommend FiraCode Nerd Font.
+
+    Build Tools: gcc, make, and g++ are needed for nvim-treesitter to parse code and for Mason to install some tools.
+
+🚀 Installation
+
+    1. Back up your old config (important!):
+    ```bash
+        mv ~/.config/nvim ~/.config/nvim.bak
+    ```
+    2. Clone this repo
+      ```bash
+        
+      ```
+
+After installing, you must follow these steps:
+
+    Launch Neovim:
+   
+   ```bash
+    nvim
+    #followed by :Lazy sync
+   ```
+
+    Install Plugins: lazy.nvim will automatically open. Press I to install all the plugins.
+
+    Restart Neovim: Quit (:q) and re-open nvim.
+
+    Install Tools: Mason (our tool manager) will automatically start installing all your LSPs, formatters, and debuggers (like gopls, prettier, delve).
+
+You can check the progress by running the command :Mason. If anything is missing, you can install it manually from that menu.
+
+✨ Core Features
+
+This config turns Neovim into a full IDE, including:
+
+    Plugin Management: lazy.nvim
+
+    LSP: nvim-lspconfig for code intelligence.
+
+    Auto-completion: nvim-cmp for pop-up suggestions.
+
+    Fuzzy Finding: telescope.nvim for finding files, text, and LSP definitions.
+
+    Auto-Formatting: conform.nvim formats your code on save.
+
+    Debugging: nvim-dap provides a full visual debugger for Go and C++.
+
+    Git: gitsigns.nvim shows changes in the gutter.
+
+    UI: nvim-tree.lua (file explorer), lualine.nvim (status bar), and gruvbox.nvim (theme).
+
 1. 📂 Overall Structure
 
 Your config is split into two main areas: lua/core for your personal settings and lua/plugins for all your plugins. This separation makes it easy to find and change things.
